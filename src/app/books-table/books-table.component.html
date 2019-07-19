@@ -1,0 +1,20 @@
+<h2>My Library</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Pages</th>
+            <th>Read yet?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.pages}}</td>
+            <td><button (click)="toggleReadStatus(i)">{{book.readStatus}}</button></td>
+            <td><button (click)="deleteBook(i)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>

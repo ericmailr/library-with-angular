@@ -1,0 +1,29 @@
+<div id="form-container">
+    <button id="new-book-button" (click)="toggleShow()" >NEW BOOK</button>
+    <form id="form" [formGroup]="bookForm" (ngSubmit)="onSubmit()" *ngIf="show">
+        <h3> Add a book </h3>
+        <span>
+            <label for="author">Author</label>
+            <input id="author" name="author" type="text" formControlName="author"  placeholder="Mark Twain">
+        </span>
+        <span>
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" formControlName="title" placeholder="The Adventures of Tom Sawyer">
+        </span>
+        <span>
+            <label for="pages"># of Pages</label>
+            <input id="pages" name="pages" type="text" formControlName="pages" placeholder="679">
+        </span>
+        <span>
+            <label for="readStatus">Have you read it?</label>
+            <select id="readStatus" formControlName="readStatus">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </span>
+        <span>
+            <button type="submit">Add Book!</button>
+            <button (click)="toggleShow()">Cancel</button>
+        </span>
+    </form>
+</div>
